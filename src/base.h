@@ -3,6 +3,10 @@
 
 
 #include <iostream>
+#ifdef __linux__
+#include <string.h>
+#endif
+
 typedef unsigned char uint8;
 typedef unsigned char Byte;
 typedef unsigned short uint16;
