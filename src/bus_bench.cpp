@@ -7,6 +7,10 @@
 #include <stdio.h>     /* printf, scanf, NULL */
 #include <stdlib.h>     /* malloc, free, rand */
 
+#ifdef __linux__
+#include <string.h>
+#endif
+
 
 int main(int argc, char * argv[])
 {
