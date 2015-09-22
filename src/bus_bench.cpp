@@ -14,12 +14,12 @@
 
 int main(int argc, char * argv[])
 {
-  double portion = 0.45;
-  uint64 memory_size = getMemorySize();
+  double portion = 0.9;
+  uint64 memory_size = getMemorySize() * portion;
   uint64 page_size = sysconf(_SC_PAGESIZE);
   uint64 page_nums = memory_size/page_size;
   // Need to Configure Parse
-  bool debug = false;
+  bool debug = true;
 
   if(debug)
   {
@@ -27,7 +27,7 @@ int main(int argc, char * argv[])
     printf("Memory Size (bytes): %lu | ",memory_size);
     printf("Page Size (bytes): %lu | ",page_size);
     printf("Number of Pages: %lu \n",page_nums);
-    printf("Note: We allocte %f \% of the memory \n",portion);
+    printf("Note: We allocte %f of the memory \n",portion*100);
   }
 
   // Allocate memory
